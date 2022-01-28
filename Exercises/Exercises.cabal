@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       Lib
+      TopicZero
   other-modules:
       Paths_Exercises
   hs-source-dirs:
