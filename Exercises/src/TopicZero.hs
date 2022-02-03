@@ -20,5 +20,28 @@ instance Show Expr where
     show (Times t1 t2) = "(" ++ show t1 ++ " * " ++ show t2 ++ ")"
     show (Plus t1 t2) = "(" ++ show t1 ++ " + " ++ show t2 ++ ")"
 
+readExprIO :: IO Expr
+readExprIO = do
+    expr <- getLine
+    let ts = words expr
+    return $ parseStrs ts
+
+readExpr :: String -> Expr
+readExpr = parseStrs . words
+
+parseStrs :: [String] -> Expr
+parseStrs [x] = case safeRead x of
+                Just n -> Lit n
+                Nothing -> Var x
+parseStrs (x:"+":xs) = Plus (parseStrs [x]) (parseStrs xs)
+parseStrs (x:"*":xs) = Times (parseStrs [x]) (parseStrs xs)
+parseStrs _ = undefined
+
+safeRead :: Read a => String -> Maybe a
+safeRead s
+  | [(x, "")] <- reads s = Just x
+  | otherwise = Nothing
+
+
 testExpr :: Expr
 testExpr = Times (Plus (Var "a") (Var "n")) (Lit 1)
