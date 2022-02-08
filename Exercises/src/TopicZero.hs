@@ -29,6 +29,8 @@ readExprIO = do
 readExpr :: String -> Expr
 readExpr = parseStrs . words
 
+-- | Does not actually take into account into account the order of operations
+-- | Just parses from left to right
 parseStrs :: [String] -> Expr
 parseStrs [x] = case safeRead x of
                 Just n -> Lit n
@@ -37,11 +39,11 @@ parseStrs (x:"+":xs) = Plus (parseStrs [x]) (parseStrs xs)
 parseStrs (x:"*":xs) = Times (parseStrs [x]) (parseStrs xs)
 parseStrs _ = undefined
 
+-- | from hoogle
 safeRead :: Read a => String -> Maybe a
 safeRead s
   | [(x, "")] <- reads s = Just x
   | otherwise = Nothing
-
 
 testExpr :: Expr
 testExpr = Times (Plus (Var "a") (Var "n")) (Lit 1)
