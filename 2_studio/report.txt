@@ -1,0 +1,66 @@
+Team report of your experiences in this studio.
+
+Team member names:
+
+
+1. Running the parser on the examples, 
+    which of the following examples passed the parse and which did not?
+
+    	/* 1 */ 		"f b   i a   a = 5   b = a + 3.2   p b",
+		/* 2 */ 		"f a",
+		/* 3 */ 		"a a",
+		/* 4 */ 		"f f",
+		/* 5 */ 		"a = 5  f b",
+		/* 6 */ 		"% %"
+  
+2. For example 1, what do each of the following program fragments mean?
+
+   f b
+   
+   i a
+   
+   a = 5
+   
+   b = a + 3.2
+   
+   p b
+   
+ 3. For the examples (1 through 6) that did not parse correctly, 
+     what syntactic problems do they have, based on the grammar
+     shown in Figure 2.1?
+     
+     
+4. Answer the following questions about ScannerCode:
+
+   a) Two CharStream methods are mentioned frequently in ScannerCode:
+         peek() and advance()
+      What are the differences between these two methods?
+      
+   b) How does the code in Scanner determine that a nonreserved keyword is found?
+      Recall that f, i, and p are reserved, but all other letters can be used as
+      identifiers.  How does Scanner determine that an identifier is found, and
+      what role does the method representativeChar play in that process?
+
+5.  Exercise in changing the print reserved keyword from p to d.  Document your
+findings here:
+
+6.  What do "final" and "public" prevent and allow for the instance
+    variables in Token.java?
+    
+7.  Findings about TokenStream:
+
+8.  Similarities and differences of Parser's Stmts() method
+    with that found in Figure 2.8 of the text book:
+    
+9.  What production must be added to Figure 2.1 to accommodate the
+    new constant # ?
+
+10. What changes are needed in Token and ScannerCode for # ?
+
+11. What changes are needed in Parser to accommodate # ?
+
+12. What changes are needed in your software to accommodate * ?
+
+
+--------------------
+$Id: report.txt 34 2010-06-22 14:58:12Z cytron $      
