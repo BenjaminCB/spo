@@ -1,0 +1,28 @@
+10
+sx
+0 k
+lx
+30
++
+sx
+0 k
+lx
+p
+si
+
+lx
+ly
++
+sx
+0 k
+lx
+p
+si
+
+lx
+ly
+-
+sx
+ly
+p
+si

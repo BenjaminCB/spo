@@ -51,8 +51,13 @@ public class ScannerCode {
 				case 'a':  // matches {a, b, ..., z} - {f, i, p}
 					ans = new Token(ID, ""+ch); break;
 				case 'f':
-					ans = new Token(FLTDCL);  break;
+					if (s.peek() == 'l')
+						Consume("loat");
+					ans = new Token(FLTDCL);
+					break;
 				case 'i':
+					if (s.peek() == 'n')
+						Consume("nt");
 					ans = new Token(INTDCL);    break;
 				case 'p':
 					ans = new Token(PRINT);     break;
@@ -71,29 +76,47 @@ public class ScannerCode {
 		}
 		return ans;
 	}
+
+	private static void Consume(String str) {
+		for (char c : str.toCharArray()) {
+			if (s.peek() == c) {
+				s.advance();
+			} else {
+				throw new Error("Lexical error while trying to parse float");
+			}
+		}
+	}
 	
 	/**
 	 * Figure 2.6 code, processes the input stream to form
 	 *    a float or int constant.
 	 * @return the Token representing the discovered constant
 	 */
-
 	private static Token ScanDigits() {
 		String val = "";
 		int   type;
-		while (isDigit(s.peek())) {
-			val = val + s.advance();
-		}
+		val += ConsumeDigits();
 		if (s.peek() != '.')
 			type = INUM;
 		else {
 			type = FNUM;
 			val = val + s.advance();
-			while (isDigit(s.peek())) {
-				val = val + s.advance();
-			}
+			val += ConsumeDigits();
+		}
+		if (s.peek() == 'e') {
+			val += s.advance();
+			if (s.peek() == '-') val += s.advance();
+			val += ConsumeDigits();
 		}
 		return new Token(type, val);
+	}
+
+	private static String ConsumeDigits() {
+		String res = "";
+		while (isDigit(s.peek())) {
+			res += s.advance();
+		}
+		return res;
 	}
 	
 	/**

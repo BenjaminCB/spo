@@ -16,12 +16,17 @@ public class Main {
 		//   Each will be tried through the parser
 		//
 		String[] examples = new String[] {
-		/* 1 */ 		"f b   i a   a = 5   b = a + 3.2   p b",
-		/* 2 */ 		"f a",
-		/* 3 */ 		"a a",
-		/* 4 */ 		"f f",
-		/* 5 */ 		"a = 5  f b",
-		/* 6 */ 		"% %"
+			"f b   i a   a = 5   b = a + 3.2   p b",
+			"f a",
+			"float a",
+			"foat a",
+			"int a",
+			"float b   int a   a = 5   b = a + 3.2   p b",
+			"a a",
+			"f f",
+			"a = 5  f b",
+			"% %",
+			"f b   b = 5.01e-10"
 		};
 
 		for (String example : examples) {
