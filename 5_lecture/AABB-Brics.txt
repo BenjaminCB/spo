@@ -1,0 +1,11 @@
+P[empty] :
+ [a]     | "a"
+ [b]     | "b"
+ [aPa]   | "a" P "a"
+ [bPb]   | "b" P "b"
+
+S [S]  : A B
+A [AA] : A A 
+  [a]  | "a"
+B [B]  : B B 
+  [b]  | "b"

@@ -1,0 +1,12 @@
+Your First and Follow sets should be written into the
+  Main class file of the studio4 package.
+  
+  
+Team report of your experiences in this studio.
+
+Team member names:
+
+
+
+--------------------
+$Id: report.txt 27 2010-05-08 18:16:31Z cytron $      
