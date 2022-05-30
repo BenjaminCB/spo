@@ -64,6 +64,7 @@ Read up on Symbol table
 Read up on types of Garbage collectors
 Read up on terms to use
 Read up on frames and displays
+If there is time read up on code generation
 
 Read up on code templates
     used to easily see how we should implement our runtime semantics as the actual code can become quite unreadable.
