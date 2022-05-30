@@ -1,0 +1,71 @@
+implicit and explicit sequence control
+    implicit sequence control can be evaluation of exprs, can work around with brackets which are explicit
+    explicit can be statements as in you choosing which statements to execute first, second and so on
+
+unstructured vs structured sequence control
+    unstructured = jumps, goto...
+    structured = ifs, whiles...
+
+tennents language design principles
+dynamic semantics
+tree traversal
+multi pass single pass
+substitution and left factorization
+    two rules one for a singular if statement and one for an if-else statement can become the following using left factorization if E then S ( <empty> | else S)
+
+finite automata in spo
+size of lexer
+What does LL and LR stand for
+    Left-scan, Leftmost derivation
+    Left-scan, Rightmost derivation in reverse
+
+    LL constructs the parse tree in pre-order
+    LR in post-order
+
+does this resolution rule solve the conflict
+    else will match the closest if
+
+implicit vs explicit binding
+    see p 86-93 in transitions and trees
+
+difference between flat and nested
+how do methods get instance variables
+frames and displays
+    frame holds information for local variables, return value ond dynamic link to previous frame in the stack i.e the function that called
+    to keep track of nested functions a static link is used to to the function in which you defined.
+    top of stack points to where the next prame should be
+    frame pointer points to where the current top frame starts
+
+    a display is a register which knows for the current frame where is the enclosing function, its cheapeac because we do not need to follow a pointer chain
+
+more args than registers
+caller colle save
+difference between lr parsers
+am i right about the free list
+    the free list is located within the free memory, having a free block size and a pointer to the next free block.
+
+is code generator only for object code or all types of code
+integrated register allocator and code scheduler
+peephole optimization
+java bytecode
+
+optimization
+    constant folding could be 4 / 3 * pi * r * r * r calculating 4 / 3 * pi at compile time
+
+    comman sub-expression elimination could be calculating x - y only once in the expression (x - y) * (x - y + z)
+
+    code motion could be calculating the address of the 1st dimension before entering the inner loop when looping through a 2d array
+
+    dead code elimination is not calculating code that is never used, as it will waste computation at runtime
+
+Read up on AST figures and algos
+Read up on LR algos
+Read up on Symbol table
+Read up on types of Garbage collectors
+Read up on terms to use
+Read up on frames and displays
+
+Read up on code templates
+    used to easily see how we should implement our runtime semantics as the actual code can become quite unreadable.
+
+Read up on Visitor pattern
