@@ -65,6 +65,7 @@ Read up on types of Garbage collectors
 Read up on terms to use
 Read up on frames and displays
 If there is time read up on code generation
+If there is time read up on the oo aspects in a compied lang
 
 Read up on code templates
     used to easily see how we should implement our runtime semantics as the actual code can become quite unreadable.
