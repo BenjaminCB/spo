@@ -58,6 +58,12 @@ optimization
 
     dead code elimination is not calculating code that is never used, as it will waste computation at runtime
 
+    register allocation tries to used the registers efficiently and to minimize the use of store and load as registers are much faster than memory
+
+    code scheduling tries to limit pibeline which sometimes means that we have to load a lot a varibles at the begining, meaning that we use more registers than strictly neccecary
+
+    therefore register allocation and code scheduling is often done at the same time
+
 Read up on AST figures and algos
 Read up on LR algos
 Read up on Symbol table
